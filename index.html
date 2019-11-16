@@ -14,14 +14,14 @@ document.workform.submitted.value=c;
 a=Math.floor(100*Math.random());
 b=Math.floor(100*Math.random());
 document.workform.num1.value=a;
-op=Math.floor(10*Math.random()); //get 0-9
+op=Math.random(); //get 0-1, not incl 1
 //reset opDisplay
 opDisplay="";
-if (op <5) {
-    opDisplay=" -";
+if (op <0.5) {
+    opDisplay="- ";
     c=a-b;
 } else{
-    opDisplay=' +';
+    opDisplay='+ ';
     c=a+b;
 }
 document.workform.operator1.value=opDisplay;
@@ -39,7 +39,7 @@ function reveal(){
 if (c.toString()== document.workform.submitted.value.toString()){
     document.workform.actual.value="Great!";
 } else{
-    document.workform.actual.value=a.toString().concat(opDisplay.toString()).concat(b.toString()).concat("=").concat(c.toString()).concat(' ').concat(op.toString());
+    document.workform.actual.value=a.toString().concat(opDisplay.toString()).concat(b.toString()).concat("=").concat(c.toString());
 }
 
 arithmetic();
