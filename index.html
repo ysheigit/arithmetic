@@ -15,8 +15,8 @@ document.workform.num1.value=a;
 document.workform.num2.value=b;
 op=Math.random()
 if (op <0.5) {
-    document.workform.operator1.value='+';
-    c=a+b;
+    document.workform.operator1.value='-';
+    c=a-b;
 } else{
     document.workform.operator1.value='-';
     c=a-b;
@@ -34,7 +34,7 @@ function reveal(){
 if (c.toString()== document.workform.submitted.value.toString()){
     document.workform.actual.value="Great!";
 } else{
-    document.workform.actual.value=a.toString().concat(document.workform.operator1.value).concat(b.toString()).concat("=").concat(c.toString());
+    document.workform.actual.value=a.toString().concat(document.workform.operator1.value.toString()).concat(b.toString()).concat("=").concat(c.toString());
 }
 
 
