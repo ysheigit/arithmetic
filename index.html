@@ -17,7 +17,7 @@ document.workform.num2.value=b;
 op=Math.random()
 //reset opDisplay
 opDisplay=""
-if (op >parseFloat(0.5)) {
+if (op >0.5) {
     opDisplay="-"
     c=a-b;
 } else{
@@ -38,7 +38,7 @@ function reveal(){
 if (c.toString()== document.workform.submitted.value.toString()){
     document.workform.actual.value="Great!";
 } else{
-    document.workform.actual.value=a.toString().concat(opDisplay.toString()).concat(b.toString()).concat("=").concat(c.toString());
+    document.workform.actual.value=a.toString().concat(opDisplay.toString()).concat(b.toString()).concat("=").concat(c.toString()).concat(' ').concat(op.toString());
 }
 
 
