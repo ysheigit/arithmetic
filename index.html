@@ -6,6 +6,10 @@
 
 <script language="javascript" type="text/javascript">
 
+function sleep(ms){
+    return new Promise(resolve =>setTimeout(resolve, ms));
+}
+
 function arithmetic(){
 //clear previous answers
 c='';
@@ -33,7 +37,7 @@ document.workform.submitted.focus();
 </script>
 
 <script language="javascript" type="text/javascript">
-function reveal(){
+async function reveal(){
 
 if (c.toString()== document.workform.submitted.value.toString()){
     document.workform.actual.value="Great!";
@@ -41,7 +45,7 @@ if (c.toString()== document.workform.submitted.value.toString()){
     document.workform.actual.value=a.toString().concat(opDisplay.toString()).concat(b.toString()).concat("=").concat(c.toString()).concat(' ').concat(op.toString());
 }
 
-
+await sleep(200);
 arithmetic();
 }
 </script>
