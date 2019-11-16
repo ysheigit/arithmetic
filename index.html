@@ -20,6 +20,9 @@ if (op <0.5) {
     document.workform.operator1.value='-';
 }
 
+//set proper focus
+document.workform.submitted.focus();
+
 }
 </script>
 
@@ -37,8 +40,7 @@ if (c== Number(document.workform.submitted.value)){
 } else{
     document.workform.actual.value=a.toString().concat(document.workform.operator1.value).concat(b.toString()).concat("=").concat(c.toString());
 }
-//set proper focus
-document.workform.submitted.focus();
+
 
 arithmetic();
 }
