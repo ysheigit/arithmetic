@@ -8,7 +8,6 @@
 
 function arithmetic(){
 //clear previous answers
-//document.workform.actual.value='';
 document.workform.submitted.value='';
 a=Math.floor(100*Math.random())
 b=Math.floor(100*Math.random())
@@ -38,6 +37,8 @@ if (c== Number(document.workform.submitted.value)){
 } else{
     document.workform.actual.value=a.toString().concat(document.workform.operator1.value).concat(b.toString()).concat("=").concat(c.toString());
 }
+//set proper focus
+document.workform.submitted.focus();
 
 arithmetic();
 }
