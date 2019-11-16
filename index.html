@@ -10,14 +10,14 @@ function arithmetic(){
 //clear previous answers
 c=''
 document.workform.submitted.value=c;
-a=Math.floor(100*Math.random())
-b=Math.floor(100*Math.random())
+a=Math.floor(100*Math.random());
+b=Math.floor(100*Math.random());
 document.workform.num1.value=a;
 document.workform.num2.value=b;
-op=Math.random()
+op=Math.floor(10*Math.random()); //get 0-9
 //reset opDisplay
 opDisplay=""
-if (op >0.5) {
+if (op >=5) {
     opDisplay="-"
     c=a-b;
 } else{
