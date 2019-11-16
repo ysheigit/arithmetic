@@ -5,23 +5,26 @@
 <title> arithmetic workshop</title>
 
 <script language="javascript" type="text/javascript">
+'use strict'
 
-
+var c='';
+var b='';
+var a='';
+var opDisplay='';
 function arithmetic(){
 //clear previous answers
-c='';
-document.workform.submitted.value=c;
+document.workform.submitted.value='';
 a=Math.floor(100*Math.random());
 b=Math.floor(100*Math.random());
 document.workform.num1.value=a;
-op=Math.random(); //get 0-1, not incl 1
+var op=Math.random(); //get 0-1, not incl 1
 //reset opDisplay
 opDisplay="";
 if (op <0.5) {
-    opDisplay="- ";
+    opDisplay="-";
     c=a-b;
 } else{
-    opDisplay='+ ';
+    opDisplay='+';
     c=a+b;
 }
 document.workform.operator1.value=opDisplay;
@@ -35,6 +38,7 @@ document.workform.submitted.focus();
 
 <script language="javascript" type="text/javascript">
 function reveal(){
+'use strict'
 
 if (c.toString()== document.workform.submitted.value.toString()){
     document.workform.actual.value="Great!";
@@ -46,16 +50,6 @@ arithmetic();
 }
 </script>
 
-
-
-<script language="javascript" type="text/javascript">
-function subtraction(){
-a=Number(document.workform.num1.value);
-b=Number(document.workform.num2.value);
-c=a-b;
-document.workform.total.value=c;
-}
-</script>
 
 
 </head>
