@@ -17,11 +17,11 @@ document.workform.num1.value=a;
 op=Math.floor(10*Math.random()); //get 0-9
 //reset opDisplay
 opDisplay="";
-if (op >=5) {
-    opDisplay="-";
+if (op <5) {
+    opDisplay="m";
     c=a-b;
 } else{
-    opDisplay='+';
+    opDisplay='p';
     c=a+b;
 }
 document.workform.operator1.value=opDisplay;
