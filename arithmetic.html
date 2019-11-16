@@ -1,0 +1,86 @@
+<html>
+
+<head>
+
+<title> arithmetic workshop</title>
+
+<script language="javascript" type="text/javascript">
+
+function arithmetic(){
+//clear previous answers
+//document.workform.actual.value='';
+document.workform.submitted.value='';
+a=Math.floor(100*Math.random())
+b=Math.floor(100*Math.random())
+document.workform.num1.value=a;
+document.workform.num2.value=b;
+op=Math.random()
+if (op <0.5) {
+    document.workform.operator1.value='+';
+} else{
+    document.workform.operator1.value='-';
+}
+
+}
+</script>
+
+<script language="javascript" type="text/javascript">
+function reveal(){
+
+if (op <0.5) {
+    c=a+b;
+
+} else{
+    c=a-b;
+}
+if (c== Number(document.workform.submitted.value)){
+    document.workform.actual.value="Great!";
+} else{
+    document.workform.actual.value=a.toString().concat(document.workform.operator1.value).concat(b.toString()).concat("=").concat(c.toString());
+}
+
+arithmetic();
+}
+</script>
+
+
+
+<script language="javascript" type="text/javascript">
+function subtraction(){
+a=Number(document.workform.num1.value);
+b=Number(document.workform.num2.value);
+c=a-b;
+document.workform.total.value=c;
+}
+</script>
+
+
+</head>
+
+<body onload="javascript:arithmetic();">
+
+<!--this form is called.. --> 
+<form name="workform">
+
+<!-- first input --> 
+<input type="text" name="num1" size="4"> 
+ 
+<!-- The operator --> 
+<input type="text" name="operator1" size="2"> 
+
+<!-- 2nd input --> 
+<input type="text" name="num2" size= "4"> 
+
+
+<!-- answer area... --> 
+Submit Answer: <input type="text" name="submitted" size=4 onchange=javascript:reveal();> 
+
+<!-- correct answer? --> 
+Actual Answer: <input type="text" name="actual" size=20> 
+
+
+</form>
+
+</body>
+</html>
+
