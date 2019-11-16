@@ -6,9 +6,6 @@
 
 <script language="javascript" type="text/javascript">
 
-function sleep(ms){
-    return new Promise(resolve =>setTimeout(resolve, ms));
-}
 
 function arithmetic(){
 //clear previous answers
@@ -17,7 +14,6 @@ document.workform.submitted.value=c;
 a=Math.floor(100*Math.random());
 b=Math.floor(100*Math.random());
 document.workform.num1.value=a;
-document.workform.num2.value=b;
 op=Math.floor(10*Math.random()); //get 0-9
 //reset opDisplay
 opDisplay="";
@@ -29,6 +25,7 @@ if (op >=5) {
     c=a+b;
 }
 document.workform.operator1.value=opDisplay;
+document.workform.num2.value=b;
 
 //set proper focus
 document.workform.submitted.focus();
@@ -37,7 +34,7 @@ document.workform.submitted.focus();
 </script>
 
 <script language="javascript" type="text/javascript">
-async function reveal(){
+function reveal(){
 
 if (c.toString()== document.workform.submitted.value.toString()){
     document.workform.actual.value="Great!";
@@ -45,7 +42,6 @@ if (c.toString()== document.workform.submitted.value.toString()){
     document.workform.actual.value=a.toString().concat(opDisplay.toString()).concat(b.toString()).concat("=").concat(c.toString()).concat(' ').concat(op.toString());
 }
 
-await sleep(200);
 arithmetic();
 }
 </script>
