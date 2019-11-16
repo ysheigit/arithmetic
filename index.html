@@ -16,8 +16,10 @@ document.workform.num2.value=b;
 op=Math.random()
 if (op <0.5) {
     document.workform.operator1.value='+';
+    c=a+b;
 } else{
     document.workform.operator1.value='-';
+    c=a-b;
 }
 
 //set proper focus
@@ -29,13 +31,7 @@ document.workform.submitted.focus();
 <script language="javascript" type="text/javascript">
 function reveal(){
 
-if (op <0.5) {
-    c=a+b;
-
-} else{
-    c=a-b;
-}
-if (c== Number(document.workform.submitted.value)){
+if (c.toString()== document.workform.submitted.value.toString()){
     document.workform.actual.value="Great!";
 } else{
     document.workform.actual.value=a.toString().concat(document.workform.operator1.value).concat(b.toString()).concat("=").concat(c.toString());
